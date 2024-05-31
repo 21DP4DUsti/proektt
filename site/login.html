@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Sneaker Store</title>
+    <link rel="stylesheet" href="stylesgg.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Brands.html">Brands</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+                <li><a href="AboutUs.html">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="form-container">
+            <h2>Login</h2>
+            <form action="login.php" method="post" id="loginForm">
+                <label for="loginUsername">Username</label>
+                <input type="text" id="loginUsername" name="username" required>
+                <label for="loginPassword">Password</label>
+                <input type="password" id="loginPassword" name="password" required>
+                <button type="submit">Login</button>
+                <p>Don't have an account? <a href="register.html">Register</a></p>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>About Us</h3>
+                <p>Sneaker Aukcion is the leading online auction platform for sneaker enthusiasts. Discover rare finds and bid on your favorite sneakers today.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="Brands.html">Brands</a></li>
+                    <li><a href="Contact.html">Contact</a></li>
+                    <li><a href="AboutUs.html">About Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+                    <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
+                    <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <p>Address: Martas-Rinkas1, Riga, Latvija</p>
+                <p>Phone: +371 22303133</p>
+                <p>Email: <a href="mailto:info@sneakerstore.com">info@sneakerstore.com</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Sneaker Store. All rights reserved.</p>
+        </div>
+    </footer>
+    <!--<div id="userDisplay"></div>--> <!-- Закомментировал отображение имени пользователя -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const loginForm = document.getElementById('loginForm');
+            // const userDisplay = document.getElementById('userDisplay'); // Убрал обращение к элементу для отображения имени
+
+            if (loginForm) {
+                loginForm.addEventListener('submit', function(event) {
+                    event.preventDefault();
+            
+                    const formData = new FormData(loginForm);
+            
+                    fetch('login.php', {
+                        method: 'POST',
+                        body: formData,
+                    })
+                    .then(response => response.text())
+                    .then(data => {
+                        if (data === 'Login successful!') {
+                            const username = formData.get('username');
+                            // userDisplay.textContent = username; // Убрал отображение имени пользователя
+                            localStorage.setItem('username', username);
+                            window.location.href = 'index.html';
+                        } else {
+                            alert(data);
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                    });
+                });
+            }
+
+            // const storedUsername = localStorage.getItem('username');
+            // if (storedUsername) {
+            //     userDisplay.textContent = storedUsername;
+            // }
+        });
+    </script>
+</body>
+</html>
+

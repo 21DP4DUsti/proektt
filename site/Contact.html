@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Brands.html">Brands</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+                <li><a href="AboutUs.html">About Us</a></li>
+            </ul>
+        </nav>
+        <h1>Sneaker Aukcion</h1>
+        <a href="#" class="cart-icon">
+            <img src="cart.png" alt="Cart">
+            <span class="cart-counter">0</span>
+        </a>
+        <a href="#" class="register-button" id="registerButton">Login</a>
+        <button id="themeToggle" class="theme-toggle-button">Switch Theme</button>
+        <div class="user-display"></div>
+        <script src="script.js"></script>
+    </header>
+
+
+
+    <div class="contact">
+        <h2>Contact Us</h2>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="6" required></textarea><br><br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>About Us</h3>
+                <p>Sneaker Aukcion is the leading online auction platform for sneaker enthusiasts. Discover rare finds and bid on your favorite sneakers today.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="Brands.html">Brands</a></li>
+                    <li><a href="Contact.html">Contact</a></li>
+                    <li><a href="AboutUs.html">About Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+                    <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
+                    <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <p>Address: Martas-Rinkas1, Riga, Latvija</p>
+                <p>Phone: +371 22303133</p>
+                <p>Email: <a href="mailto:info@sneakerstore.com">info@sneakerstore.com</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Sneaker Store. All rights reserved.</p>
+        </div>
+    </footer>
+    
+</body>
+</html>
